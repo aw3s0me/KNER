@@ -28,6 +28,9 @@ public class EvaluatorImpl implements Evaluator {
         for (String resource: entities) {
             System.out.println(resource);
         }
+
+        // run rml transormer
+        // be.ugent.mmlab.rml.main.Main.main('ttt');
     }
 
     public static void main(String[] args) {
