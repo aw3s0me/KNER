@@ -8,4 +8,5 @@ import org.json.JSONObject;
 public interface SlideService {
     JSONObject getDeck(String deckId);
     JSONObject getSlide(String slideId);
+    String getDeckSlides(String deckId);
 }

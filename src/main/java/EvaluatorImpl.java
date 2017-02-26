@@ -1,6 +1,5 @@
 import components.NER;
 import components.dbpedia.DBpediaNER;
-import org.json.JSONObject;
 import slide.SlideService;
 import slide.SlideServiceImpl;
 
@@ -20,8 +19,9 @@ public class EvaluatorImpl implements Evaluator {
     @Override
     public void evaluate() {
         disableSSLCheck();
-        JSONObject deck = slideService.getDeck("1");
-        System.out.println(deck);
+        String allTextFromDeck = slideService.getDeckSlides("3");
+
+        System.out.println(allTextFromDeck);
 
         //List<String> entities = dbpedia.getEntities(curSlide.getContent());
     }
