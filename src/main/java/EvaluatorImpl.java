@@ -3,6 +3,8 @@ import components.dbpedia.DBpediaNER;
 import slide.SlideService;
 import slide.SlideServiceImpl;
 
+import java.util.List;
+
 import static utils.ConnectionHelper.disableSSLCheck;
 
 /**
@@ -21,9 +23,11 @@ public class EvaluatorImpl implements Evaluator {
         disableSSLCheck();
         String allTextFromDeck = slideService.getDeckSlides("3");
 
-        System.out.println(allTextFromDeck);
+        List<String> entities = dbpedia.getEntities(allTextFromDeck);
 
-        //List<String> entities = dbpedia.getEntities(curSlide.getContent());
+        for (String resource: entities) {
+            System.out.println(resource);
+        }
     }
 
     public static void main(String[] args) {
